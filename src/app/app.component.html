@@ -1,3 +1,15 @@
+<app-navigation></app-navigation>
+
 <h1>
   {{title}}
 </h1>
+
+<router-outlet></router-outlet>
+
+<ul>
+  <li *ngFor="let room of items | async">{{ room.Puzzle }} - <i>{{ room.Description }}</i></li>
+</ul>
+
+<h2>CHATTIE</h2>
+
+<div *ngFor="let message of chatMessages | async"><b>{{ message.User }}</b>: {{ message.Message }}</div>
